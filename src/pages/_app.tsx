@@ -20,7 +20,7 @@ const MyApp: AppType = ({ Component, pageProps }) => {
             <link rel="icon" href="/favicon.ico" />
           </Head>
           <ThemeProvider attribute="class">
-            <motion.div className="w-full mx-auto bg-red-500 fixed top-0 left-0 right-0 h-2 origin-[0]" style={{ scaleX }}>
+            <motion.div className="w-full mx-auto bg-black dark:bg-white fixed top-0 left-0 right-0 h-2 origin-[0]" style={{ scaleX }}>
               <Component {...pageProps} />
             </motion.div>
           </ThemeProvider>
