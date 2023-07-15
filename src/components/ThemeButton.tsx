@@ -1,5 +1,6 @@
 import React from "react";
 import { useTheme } from "next-themes";
+import { MoonIcon, SunIcon } from "@heroicons/react/24/outline";
 
 const ThemeButton = () => {
   const { systemTheme, theme, setTheme } = useTheme();
@@ -7,10 +8,15 @@ const ThemeButton = () => {
 
   return (
     <button
-      onClick={() => (theme == "dark" ? setTheme("light") : setTheme("dark"))}
-      className="bg-gray-800 dark:bg-gray-50 hover:bg-gray-600 dark:hover:bg-gray-300 transition-all duration-100 text-white dark:text-gray-800"
+      type="button"
+      onClick={() => (theme === "dark" ? setTheme("light") : setTheme("dark"))}
     >
-      Toggle Mode
+      <span className="sr-only">Toggle theme</span>
+      {currentTheme === "light" ? (
+        <MoonIcon className="block h-8 w-8 text-cinder" aria-hidden="true" />
+      ) : (
+        <SunIcon className="block h-8 w-8 text-yellow-500" aria-hidden="true" />
+      )}
     </button>
   );
 };
