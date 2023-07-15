@@ -2,7 +2,6 @@ import React from "react";
 import Section from "./common/Section";
 import Title from "./common/Title";
 import SocialMediaIcons from "./SocialMediaIcons";
-import Image from "next/image";
 import hero from "../assets/hero/heroImage.jpg";
 import ImageBox from "./common/ImageBox";
 
@@ -11,7 +10,7 @@ const Hero = () => {
     <Section>
       <div
         className="w-full mx-auto grid grid-cols-1 md:grid-cols-2 items-center justify-between 
-      gap-10 lg:gap-20 md:py-5 lg:py-20"
+      gap-10 lg:gap-20 md:py-5 lg:pt-20"
       >
         <div className="flex flex-col justify-between items-start gap-5">
           <Title label1="my name is" label2="christian" variant="siku" />
