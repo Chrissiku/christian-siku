@@ -1,17 +1,19 @@
 import { type AppType } from "next/dist/shared/lib/utils";
+import { Inter } from 'next/font/google'
 import { ThemeProvider } from "next-themes";
 import "@/styles/globals.css";
 import Head from "next/head";
-import { motion , useScroll, useSpring} from "framer-motion";
+// import { motion , useScroll, useSpring} from "framer-motion";
 
+const inter = Inter({ weight: ['400', '500', '700', '800'], subsets: ['latin'] })
 
 const MyApp: AppType = ({ Component, pageProps }) => {
-  const { scrollYProgress } = useScroll();
-  const scaleX = useSpring(scrollYProgress, {
-    stiffness: 100,
-    damping: 30,
-    restDelta: 0.001
-  });
+  // const { scrollYProgress } = useScroll();
+  // const scaleX = useSpring(scrollYProgress, {
+  //   stiffness: 100,
+  //   damping: 30,
+  //   restDelta: 0.001
+  // });
   return (
         <>
           <Head>
@@ -20,9 +22,11 @@ const MyApp: AppType = ({ Component, pageProps }) => {
             <link rel="icon" href="/favicon.ico" />
           </Head>
           <ThemeProvider attribute="class">
-            <motion.div className="w-full mx-auto bg-black dark:bg-white fixed top-0 left-0 right-0 h-2 origin-[0]" style={{ scaleX }}>
-              <Component {...pageProps} />
-            </motion.div>
+            {/* <motion.div className="w-full h-1 mx-auto bg-purple dark:bg-cinder fixed top-0 left-0 right-0 origin-[0]" style={{ scaleX }}> */}
+              <div className={`${inter.className} w-full max-w-[1440px] mx-auto`}>
+                <Component {...pageProps} />
+              </div>
+            {/* </motion.div> */}
           </ThemeProvider>
         </>)
 };
