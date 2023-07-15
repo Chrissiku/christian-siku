@@ -16,7 +16,7 @@ const Navbar = () => {
     <Disclosure as="nav" className="relative">
       {({ open }) => (
         <>
-          <div className="mx-auto w-full px-5 md:px-10 lg:px-32 py-5">
+          <div className="max-w-[1440px] mx-auto w-full px-5 md:px-10 lg:px-32 py-5">
             <div className="relative flex items-center justify-between gap-5">
               <div className="text-xl font-bold">Logo</div>
 

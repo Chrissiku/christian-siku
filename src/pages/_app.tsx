@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google'
 import { ThemeProvider } from "next-themes";
 import "@/styles/globals.css";
 import Head from "next/head";
+import CallToAction from "@/components/CallToAction";
 // import { motion , useScroll, useSpring} from "framer-motion";
 
 const inter = Inter({ weight: ['400', '500', '700', '800'], subsets: ['latin'] })
@@ -23,8 +24,9 @@ const MyApp: AppType = ({ Component, pageProps }) => {
           </Head>
           <ThemeProvider attribute="class">
             {/* <motion.div className="w-full h-1 mx-auto bg-purple dark:bg-cinder fixed top-0 left-0 right-0 origin-[0]" style={{ scaleX }}> */}
-              <div className={`${inter.className} w-full max-w-[1440px] mx-auto`}>
+              <div className={`${inter.className} relative w-full mx-auto`}>
                 <Component {...pageProps} />
+                <CallToAction/>
               </div>
             {/* </motion.div> */}
           </ThemeProvider>

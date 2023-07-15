@@ -10,7 +10,7 @@ const Section = ({ customClassName, children }: Props) => {
 
   return (
     <section className={className.trim()}>
-      <div className="max-w-[1440px] px-5 md:px-10 lg:px-32 py-10 lg:py-14">
+      <div className="max-w-[1440px] px-5 mx-auto md:px-10 lg:px-32 py-10 lg:py-14">
         {children}
       </div>
     </section>
