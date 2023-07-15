@@ -4,6 +4,6 @@
 
 @layer base {
   body {
-    @apply dark:bg-gray-800 bg-white transition-colors duration-700 ease-linear;
+    @apply dark:bg-dark bg-white transition-colors duration-700 ease-linear;
   }
 }
