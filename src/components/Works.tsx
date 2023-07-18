@@ -1,11 +1,20 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/no-unsafe-call */
-import React, { useRef, useState } from "react";
+import React, { useRef } from "react";
 import Section from "./common/Section";
 import Title from "./common/Title";
-import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
+import {
+  ChevronLeftIcon,
+  ChevronRightIcon,
+  LinkIcon,
+} from "@heroicons/react/24/outline";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
+import project from "../assets/works/project.jpg";
+import Image from "next/image";
+import Link from "next/link";
+import WorksData from "@/data/work";
+import WorkCard from "./common/WorkCard";
 
 const Works = () => {
   const SlideRef = useRef<any>();
@@ -39,7 +48,8 @@ const Works = () => {
             <button
               onClick={handleNext}
               type="button"
-              className="scale-95 hover:scale-105 p-2 rounded-xl bg-light4"
+              className="scale-95 hover:scale-105 p-2 rounded-xl bg-light4 hover:bg-light2 
+              hover:text-bold"
             >
               <ChevronRightIcon className="text-purple w-6 h-6" />
               {""}
@@ -49,17 +59,44 @@ const Works = () => {
         <div>
           <Swiper
             ref={SlideRef}
-            spaceBetween={50}
+            spaceBetween={20}
             slidesPerView={3}
             onSlideChange={() => console.log("slide change")}
             onSwiper={(swiper) => console.log(swiper)}
+            breakpoints={{
+              320: {
+                slidesPerView: 1,
+              },
+              425: {
+                slidesPerView: 1.2,
+                spaceBetween: 10,
+              },
+              640: {
+                slidesPerView: 2,
+              },
+              768: {
+                slidesPerView: 2.3,
+                spaceBetween: 40,
+              },
+              1024: {
+                slidesPerView: 3,
+                spaceBetween: 40,
+              },
+            }}
           >
-            <SwiperSlide>Slide 1</SwiperSlide>
-            <SwiperSlide>Slide 2</SwiperSlide>
-            <SwiperSlide>Slide 3</SwiperSlide>
-            <SwiperSlide>Slide 4</SwiperSlide>
-            <SwiperSlide>Slide 5</SwiperSlide>
-            <SwiperSlide>Slide 6</SwiperSlide>
+            {WorksData.map((item, index) => (
+              <SwiperSlide
+                key={`${item.id} ${index}`}
+                className="w-full rounded-t-lg overflow-hidden"
+              >
+                <WorkCard
+                  title={item.title}
+                  src={item.src as string}
+                  link={item.link}
+                  stack={item.stack}
+                />
+              </SwiperSlide>
+            ))}
           </Swiper>
         </div>
       </div>
