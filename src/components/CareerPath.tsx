@@ -6,67 +6,128 @@ import { ChevronRightIcon } from "@heroicons/react/24/outline";
 import Title from "./common/Title";
 import Link from "next/link";
 
-function classNames(...classes) {
+function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
 }
 
 const CareerPath = () => {
-  let [categories] = useState({
-    Recent: [
+  const [categories] = useState({
+    career: [
       {
-        id: 1,
-        title: "Does drinking coffee make you smarter?",
-        date: "5h ago",
-        commentCount: 5,
-        shareCount: 2,
+        position: "Frontend developer",
+        company: {
+          name: "Apple Inc",
+          location: "California, United State (Remote)",
+          start: "November 2020",
+          end: "present",
+          type: "Full-time",
+          skills: ["swift", "go"],
+          url: "/",
+        },
+        description: [
+          "You can also use variant modifiers to target media queries like",
+          "You can also use variant modifiers to target media queries like",
+          "You can also use variant modifiers to target media queries like",
+        ],
       },
       {
-        id: 2,
-        title: "So you've bought coffee... now what?",
-        date: "2h ago",
-        commentCount: 3,
-        shareCount: 2,
+        position: "Frontend developer",
+        company: {
+          name: "Apple Inc",
+          location: "California, United State (Remote)",
+          start: "November 2020",
+          end: "present",
+          type: "Full-time",
+          skills: ["swift", "go"],
+          url: "/",
+        },
+        description: [
+          "You can also use variant modifiers to target media queries like",
+          "You can also use variant modifiers to target media queries like",
+          "You can also use variant modifiers to target media queries like",
+        ],
       },
     ],
-    Popular: [
+
+    achievement: [
       {
-        id: 1,
-        title: "Is tech making coffee better or worse?",
-        date: "Jan 7",
-        commentCount: 29,
-        shareCount: 16,
+        position: "Frontend developer",
+        company: {
+          name: "Apple Inc",
+          location: "California, United State (Remote)",
+          start: "November 2020",
+          end: "present",
+          type: "Full-time",
+          skills: ["swift", "go"],
+          url: "/",
+        },
+        description: [
+          "You can also use variant modifiers to target media queries like",
+          "You can also use variant modifiers to target media queries like",
+          "You can also use variant modifiers to target media queries like",
+        ],
       },
       {
-        id: 2,
-        title: "The most innovative things happening in coffee",
-        date: "Mar 19",
-        commentCount: 24,
-        shareCount: 12,
+        position: "Frontend developer",
+        company: {
+          name: "Apple Inc",
+          location: "California, United State (Remote)",
+          start: "November 2020",
+          end: "present",
+          type: "Full-time",
+          skills: ["swift", "go"],
+          url: "/",
+        },
+        description: [
+          "You can also use variant modifiers to target media queries like",
+          "You can also use variant modifiers to target media queries like",
+          "You can also use variant modifiers to target media queries like",
+        ],
       },
     ],
-    Trending: [
+    education: [
       {
-        id: 1,
-        title: "Ask Me Anything: 10 answers to your questions about coffee",
-        date: "2d ago",
-        commentCount: 9,
-        shareCount: 5,
+        position: "Frontend developer",
+        company: {
+          name: "Apple Inc",
+          location: "California, United State (Remote)",
+          start: "November 2020",
+          end: "present",
+          type: "Full-time",
+          skills: ["swift", "go"],
+          url: "/",
+        },
+        description: [
+          "You can also use variant modifiers to target media queries like",
+          "You can also use variant modifiers to target media queries like",
+          "You can also use variant modifiers to target media queries like",
+        ],
       },
       {
-        id: 2,
-        title: "The worst advice we've ever heard about coffee",
-        date: "4d ago",
-        commentCount: 1,
-        shareCount: 2,
+        position: "Frontend developer",
+        company: {
+          name: "Apple Inc",
+          location: "California, United State (Remote)",
+          start: "November 2020",
+          end: "present",
+          type: "Full-time",
+          skills: ["swift", "go"],
+          url: "/",
+        },
+        description: [
+          "You can also use variant modifiers to target media queries like",
+          "You can also use variant modifiers to target media queries like",
+          "You can also use variant modifiers to target media queries like",
+        ],
       },
     ],
   });
 
   return (
-    <Section customClassName="bg-light2 dark:bg-transparent">
-      <div className="w-full">
+    <Section customClassName="bg-light2 dark:bg-transparent ">
+      <div className="w-full ">
         <Tab.Group>
-          <div className="w-full grid grid-cols-1 md:grid-cols-3 items-start justify-between gap-5 md:gap-8 lg:gap-10">
+          <div className="w-full grid grid-cols-1 md:grid-cols-3 items-start justify-start gap-5">
             <div className="flex flex-col items-start justify-between gap-10">
               <div>
                 <Title label1="my career path" label2="Experience" />
@@ -77,7 +138,7 @@ const CareerPath = () => {
                     key={category}
                     className={({ selected }) =>
                       classNames(
-                        "w-full outline-none text-left inline-flex items-center justify-between text-black dark:text-light2 hover:text-purple hover:bg-white dark:hover:bg-cinder px-4 py-2 lg:py-4 text-[16px] font-normal rounded-md transition-all duration-300 easy-in-out",
+                        "w-full capitalize outline-none text-left inline-flex items-center justify-between text-black dark:text-light2 hover:text-purple hover:bg-white dark:hover:bg-cinder px-4 py-2 lg:py-4 text-[16px] font-normal rounded-md transition-all duration-300 easy-in-out",
                         "",
                         selected
                           ? "font-medium text-purple dark:text-purple bg-white dark:bg-cinder"
@@ -94,34 +155,59 @@ const CareerPath = () => {
               </Tab.List>
             </div>
 
-            <Tab.Panels className="w-full md:col-span-2">
+            <Tab.Panels className="w-full md:col-span-2 max-h-600px">
               {Object.values(categories).map((posts, idx) => (
-                <Tab.Panel key={idx} className={classNames("rounded-lg", "")}>
-                  <div className="border w-full">
-                    <div>
-                      <h5 className="text-[18px] text-cinder dark:text-white font-semibold">
-                        Frontend developer @
-                        <Link href="/" className="underline">
-                          Apple Inc
-                        </Link>
-                      </h5>
-                      <span>California, United State</span>
-                      <span>November 2020 - present &bull; Full-time</span>
-                      <div>
-                        <span>swift</span>
-                        <span>go</span>
+                <Tab.Panel
+                  key={idx}
+                  className={classNames("rounded-lg space-y-10", "")}
+                >
+                  {posts.map((post, index) => (
+                    <div
+                      key={`post-${index}`}
+                      className="w-full rounded-lg space-y-8 text-gray-600 hover:bg-light1 dark:hover:bg-cinder transition-all duration-300 p-3  md:p-5"
+                    >
+                      <div className="flex flex-col space-y-2">
+                        <h5 className="text-[18px] text-cinder dark:text-white font-normal">
+                          {post.position} @
+                          <Link
+                            href={post.company.url}
+                            target="_blank"
+                            className="underline text-purple"
+                          >
+                            {post.company.name}
+                          </Link>
+                        </h5>
+                        <span className="text-[14px] dark:text-gray-400">
+                          {post.company.location}
+                        </span>
+                        <span className="text-[14px] dark:text-gray-400">
+                          {post.company.start} - {post.company.end} &bull;{" "}
+                          {post.company.type}
+                        </span>
+                        <div className="text-[12px] inline-flex items-center justify-start space-x-3">
+                          {post.company.skills.map((skill, index) => (
+                            <span
+                              key={`skill-${index}`}
+                              className=" border px-2 py-1 rounded-md bg-light3 text-gray-600"
+                            >
+                              {skill}
+                            </span>
+                          ))}
+                        </div>
                       </div>
+                      <ul className="text-gray-400 flex flex-col gap-2">
+                        {post.description.map((desc, index) => (
+                          <li
+                            key={`description-${index}`}
+                            className="inline-flex items-center justify-start gap-3"
+                          >
+                            <hr className="w-[15px] border border-light4" />
+                            <p className="text-[14px]">{desc}</p>
+                          </li>
+                        ))}
+                      </ul>
                     </div>
-                    <ul>
-                      <li>
-                        <hr className="w-[20px] border border-light4" />
-                        <p>
-                          You can also use variant modifiers to target media
-                          queries like
-                        </p>
-                      </li>
-                    </ul>
-                  </div>
+                  ))}
                 </Tab.Panel>
               ))}
             </Tab.Panels>

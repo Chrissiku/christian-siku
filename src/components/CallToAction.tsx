@@ -45,7 +45,7 @@ const CallToAction = () => {
             {contactInfo.map((item, index) => (
               <Link
                 href="/"
-                key={index}
+                key={`cat-${index}`}
                 className="p-2 text-center border rounded-lg mx-auto bg-light-4"
               >
                 <InformationCircleIcon className="w-6 h-6 text-cinder" />

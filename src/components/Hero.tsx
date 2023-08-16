@@ -14,7 +14,7 @@ const Hero = () => {
       >
         <div className="flex flex-col justify-between items-start gap-5">
           <Title label1="my name is" label2="christian" variant="siku" />
-          <div className="block md:hidden">
+          <div className="group block md:hidden">
             <ImageBox src={hero} alt="hero image" />
           </div>
           <p className="text-left text-[16px]">
