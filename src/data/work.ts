@@ -4,7 +4,7 @@ import project from "../assets/works/project.jpg";
 
 interface Work {
   id: string;
-  src: StaticImageData | any | string;
+  src: StaticImageData | string;
   title: string;
   link: string;
   stack: string[];
