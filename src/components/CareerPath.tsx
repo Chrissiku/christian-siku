@@ -8,7 +8,7 @@ import { Tab } from "@headlessui/react";
 import { ChevronRightIcon } from "@heroicons/react/24/outline";
 import Title from "./common/Title";
 import Link from "next/link";
-import categories from "@/data/careerPath";
+import careerPath from "@/data/careerPath";
 import type { Category } from "@/data/careerPath";
 
 function classNames(...classes: string[]) {
@@ -16,7 +16,7 @@ function classNames(...classes: string[]) {
 }
 
 const CareerPath: React.FC = () => {
-  const [data] = useState<Category>(categories);
+  const [data] = useState<Category>(careerPath);
 
   return (
     <Section customClassName="bg-light2 dark:bg-transparent ">
@@ -50,7 +50,7 @@ const CareerPath: React.FC = () => {
               </Tab.List>
             </div>
 
-            <Tab.Panels className="w-full md:col-span-2 max-h-600px">
+            <Tab.Panels className="w-full md:col-span-2 max-h-[600px] drop-shadow-sm p-1 overflow-auto">
               {Object.values(data).map((posts, idx) => (
                 <Tab.Panel
                   key={idx}
@@ -65,7 +65,7 @@ const CareerPath: React.FC = () => {
                         <h5 className="text-[18px] text-cinder dark:text-white font-normal">
                           {post.position} @
                           <Link
-                            href={post.company.url}
+                            href={post.company.url as string}
                             target="_blank"
                             className="underline text-purple"
                           >

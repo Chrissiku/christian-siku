@@ -20,7 +20,7 @@ interface Category {
   education: Experience[];
 }
 
-const categories: Category = {
+const careerPath: Category = {
   career: [
     {
       position: "Frontend developer 1",
@@ -36,11 +36,10 @@ const categories: Category = {
       description: [
         "You can also use variant modifiers to target media queries like",
         "You can also use variant modifiers to target media queries like",
-        "You can also use variant modifiers to target media queries like",
       ],
     },
     {
-      position: "Frontend developer 2",
+      position: "Backend developer 2",
       company: {
         name: "Apple Inc",
         location: "California, United State (Remote)",
@@ -77,7 +76,7 @@ const categories: Category = {
       ],
     },
     {
-      position: "Frontend developer 4",
+      position: "Backend developer 4",
       company: {
         name: "Apple Inc",
         location: "California, United State (Remote)",
@@ -113,7 +112,58 @@ const categories: Category = {
       ],
     },
     {
-      position: "Frontend developer",
+      position: "Backend developer",
+      company: {
+        name: "Apple Inc",
+        location: "California, United State (Remote)",
+        start: "November 2020",
+        end: "present",
+        type: "Full-time",
+        skills: ["swift", "go"],
+        url: "/",
+      },
+      description: [
+        "You can also use variant modifiers to target media queries like",
+        "You can also use variant modifiers to target media queries like",
+        "You can also use variant modifiers to target media queries like",
+      ],
+    },
+    {
+      position: "Backend developer",
+      company: {
+        name: "Apple Inc",
+        location: "California, United State (Remote)",
+        start: "November 2020",
+        end: "present",
+        type: "Full-time",
+        skills: ["swift", "go"],
+        url: "/",
+      },
+      description: [
+        "You can also use variant modifiers to target media queries like",
+        "You can also use variant modifiers to target media queries like",
+        "You can also use variant modifiers to target media queries like",
+      ],
+    },
+    {
+      position: "Backend developer",
+      company: {
+        name: "Apple Inc",
+        location: "California, United State (Remote)",
+        start: "November 2020",
+        end: "present",
+        type: "Full-time",
+        skills: ["swift", "go"],
+        url: "/",
+      },
+      description: [
+        "You can also use variant modifiers to target media queries like",
+        "You can also use variant modifiers to target media queries like",
+        "You can also use variant modifiers to target media queries like",
+      ],
+    },
+    {
+      position: "Backend developer",
       company: {
         name: "Apple Inc",
         location: "California, United State (Remote)",
@@ -133,4 +183,4 @@ const categories: Category = {
 };
 
 export type { Company, Experience, Category };
-export default categories;
+export default careerPath;
